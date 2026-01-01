@@ -556,10 +556,10 @@ plt.axis(False)
 """## Replicating the ViT
 
 **Figure 1**
-![](https://raw.githubusercontent.com/mrdbourke/pytorch-deep-learning/refs/heads/main/images/08-vit-paper-figure-1-architecture-overview.png)
+![](https://raw.githubusercontent.com/JavRedstone/vit-architecture-pytorch/refs/heads/main/paper/vit-paper-figure-1-architecture-overview.png)
 
 **Equations**
-![](https://raw.githubusercontent.com/mrdbourke/pytorch-deep-learning/refs/heads/main/images/08-vit-paper-four-equations.png)
+![](https://raw.githubusercontent.com/JavRedstone/vit-architecture-pytorch/refs/heads/main/paper/vit-paper-four-equations.png)
 
 1. Patch embeddings
 2. Multi-Head Self-Attention (MSA) block
@@ -595,7 +595,7 @@ y = Linear_layer(LN_layer(z_L[0]))
 ```
 
 **Table 1**
-![](https://raw.githubusercontent.com/mrdbourke/pytorch-deep-learning/refs/heads/main/images/08-vit-paper-table-1.png)
+![](https://raw.githubusercontent.com/JavRedstone/vit-architecture-pytorch/refs/heads/main/paper/vit-paper-table-1.png)
 
 - Layers: Number of transformer encoder layers
 - Hidden size $D$: Embedding size
