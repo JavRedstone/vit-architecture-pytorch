@@ -144,19 +144,19 @@ with torch.inference_mode():
 
 ### Differences from Paper Training Procedure
 
-This implementation is a simplified version for educational purposes. The following techniques from the paper are not implemented:
+This implementation is a simplified version for educational purposes and differs from the original paper in several key ways:
 
-**To Prevent Underfitting:**
-- Much smaller dataset (thousands vs. millions of images)
-- No pre-training on large datasets (ImageNet-21K)
-- No transfer learning
+**Dataset & Pre-training:**
+- Uses a much smaller dataset (thousands vs. millions of images)
+- No pre-training on large datasets like ImageNet-21K
+- Trains from scratch without transfer learning
 
-**To Prevent Overfitting:**
-- No learning rate warmup
-- No learning rate decay scheduling
+**Training Optimizations:**
+- No learning rate warmup schedule
+- No learning rate decay/scheduling
 - No gradient clipping
 
-For better results, consider using the pre-trained ViT models from `torchvision.models` with transfer learning.
+These missing techniques explain why the model's performance is limited compared to the original paper's results. For production use or better accuracy, consider using pre-trained ViT models from `torchvision.models` with transfer learning.
 
 ## Results
 

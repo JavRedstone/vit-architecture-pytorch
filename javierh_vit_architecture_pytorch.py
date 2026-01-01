@@ -1158,21 +1158,21 @@ loss_fn = nn.CrossEntropyLoss()
 
 """### Training and testing ViT
 
-It is expected that the results will not be very high as there is no transfer learning.
+The model is trained from scratch without pre-training or transfer learning, so the results will be limited compared to the original paper.
 
-**Training procedure vs. ViT paper training procedure (Missing):**
+**Key Differences from the Original ViT Paper Training:**
 
-Prevent Underfitting:
-- Data: Far less data (thousands instead of millions)
-- Not using transfer learning
+**Dataset:**
+- Using thousands of images instead of millions (ImageNet-21K has 14M images)
+- No pre-training on large-scale datasets
+- Training from scratch on a small weather dataset
 
-Prevent Overfitting:
-- Learning rate warmup: Start with low learning rate and increase to a base learning rate
-- Learning rate decay: As the model gets closer to convergence, the learning rate decreases
-- Gradient clipping: Prevent gradients from getting too big
-- Not using transfer learning
+**Missing Training Techniques:**
+- **Learning rate warmup:** Gradually increasing learning rate from low to target value at the start of training
+- **Learning rate decay:** Reducing learning rate as training progresses toward convergence
+- **Gradient clipping:** Preventing exploding gradients by capping their maximum value
 
-Would use a pretrained model from `torchvision.models` to perform transfer learning in order to improve results.
+*Note:* For better results, use a pretrained model from `torchvision.models` and fine-tune it with transfer learning on the weather dataset.
 
 """
 
