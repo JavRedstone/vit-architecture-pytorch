@@ -26,11 +26,11 @@ The following diagram from the original ViT paper illustrates the complete archi
 
 *Figure 1: Vision Transformer (ViT) model architecture. Image from Dosovitskiy et al. (2020)*
 
-The key equations defining the transformer encoder are shown below:
+The four key equations are shown below:
 
 ![ViT Paper Equations](paper/vit-paper-four-equations.png)
 
-*Figure 2: Transformer encoder equations from the original paper. Image from Dosovitskiy et al. (2020)*
+*Figure 2: Four key equations from the original paper. Image from Dosovitskiy et al. (2020)*
 
 ### Model Specifications (ViT-B/16)
 
