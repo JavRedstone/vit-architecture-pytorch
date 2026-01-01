@@ -18,6 +18,20 @@ The Vision Transformer consists of the following key components:
 4. **Transformer Encoder** - Multiple layers of Multi-Head Self-Attention (MSA) and Multi-Layer Perceptron (MLP) blocks
 5. **Classification Head** - Final layer normalization and linear projection for class predictions
 
+### Architecture Overview
+
+The following diagram from the original ViT paper illustrates the complete architecture:
+
+![ViT Architecture Overview](paper/vit-paper-figure-1-architecture-overview.png)
+
+*Figure 1: Vision Transformer (ViT) model architecture. Image from Dosovitskiy et al. (2020)*
+
+The key equations defining the transformer encoder are shown below:
+
+![ViT Paper Equations](paper/vit-paper-four-equations.png)
+
+*Figure 2: Transformer encoder equations from the original paper. Image from Dosovitskiy et al. (2020)*
+
 ### Model Specifications (ViT-B/16)
 
 - **Image Size**: 224×224
@@ -27,6 +41,12 @@ The Vision Transformer consists of the following key components:
 - **MLP Hidden Size**: 3072
 - **Attention Heads (h)**: 12
 - **Total Parameters**: ~85.8M
+
+The following table from the original paper shows different ViT model variants:
+
+![ViT Model Variants](paper/vit-paper-table-1.png)
+
+*Table 1: Details of Vision Transformer model variants. This implementation uses ViT-B/16. Table from Dosovitskiy et al. (2020)*
 
 ## Dataset
 
@@ -45,6 +65,24 @@ Classes:
 
 #### Patch Embedding Layer
 Converts input images into sequence of patch embeddings using a convolutional layer with `kernel_size=stride=16`.
+
+Starting with an input image:
+
+![Sample Input Image](images/sample_image.png)
+
+*Figure 3: Sample input image (224×224 pixels)*
+
+The image is first split into fixed-size patches (16×16):
+
+![Image Patches](images/patches.png)
+
+*Figure 4: Input image split into 16×16 patches (196 total patches from 224×224 image)*
+
+Each patch is then flattened and linearly projected into an embedding vector:
+
+![Patch Embeddings](images/patch_embeddings.png)
+
+*Figure 5: Visualization of patch embeddings - each patch is transformed into a 768-dimensional embedding vector*
 
 ```python
 Input: (B, 3, 224, 224)
@@ -73,7 +111,15 @@ Each block contains:
 ├── javierh_vit_architecture_pytorch.ipynb   # Main notebook with implementation
 ├── javierh_vit_architecture_pytorch.py      # Python script version
 ├── vit_weather.pth                          # Trained model weights (tracked with Git LFS)
-└── README.md                                # This file
+├── README.md                                # This file
+├── images/                                  # Visualization images
+│   ├── sample_image.png                     # Sample input image
+│   ├── patches.png                          # Image split into patches
+│   └── patch_embeddings.png                 # Patch embedding visualization
+└── paper/                                   # ViT paper figures
+    ├── vit-paper-figure-1-architecture-overview.png
+    ├── vit-paper-four-equations.png
+    └── vit-paper-table-1.png
 ```
 
 ## Requirements
